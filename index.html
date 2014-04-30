@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+
+<body id="body">
+    <div id="users">
+    </div>
+
+    <div id="messages">
+        <div class="message" id="msgtpl" style="display:none">
+            <img src="{{{user.avatar}}}" />
+            <div class="info">
+                <p>
+                    <strong>{{user.username}}</strong>
+                </p>
+                <p>{{message}}</p>
+                <span class="date">{{h}}:{{m}}</span>
+            </div>
+        </div>
+    </div>
+    <div id="login">
+        <form id="loginform" action="">
+            Username:
+            <input type="text" name="login" id="username" placeholder="Nom d'utilisateur" />
+            &nbsp;Mail:
+            <input type="mail" name="mail" id="mail" placeholder="E-mail" size="15" />
+            &nbsp;
+            <div align="center">
+                <p style="margin-top: -25px;">
+                    <input type="submit" value="Login" />
+                </p>
+            </div>
+        </form>
+    </div>
+    <style type="text/css">
+     .bott{
+        position: fixed;
+margin-left: 5%;
+width: 95%;
+bottom: 0px;
+background-color: rgb(194, 193, 197);
+     }
+    </style>
+    <div class="bott">
+    <form id="form">
+        <input type="text" id="message" class="text"/>
+        <input type="submit" id="send" value="send message" class="submit"/>
+    </form>    
+    </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+    <script src="http://localhost:1272/socket.io/socket.io.js"></script>
+    <script src="server.js"></script>
+    <script src="client.js"></script>
+    <script src="Mustach.js"></script>
+    
+</body>
+
+</html>
